@@ -1,5 +1,5 @@
 from termcolor import cprint
-from core.game import Game, CORRECT_TYPES
+from core.game import CORRECT_TYPES, Game
 
 
 if __name__ == "__main__":

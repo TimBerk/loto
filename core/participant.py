@@ -15,6 +15,7 @@ class Participant:
 
     @staticmethod
     def get_answer():
+        """Получение ответа игрока"""
         answers = [1, 2]
         cross_out = int(input('Зачеркнуть число(1) или продолжить(2): '))
 
@@ -25,6 +26,7 @@ class Participant:
         return True if cross_out == answers[0] else False
 
     def act(self, number):
+        """Действие игрока"""
         self.cart.print_cart()
         action = {
             'computer': self.act_computer,
@@ -34,6 +36,7 @@ class Participant:
         return action[self.type](number)
 
     def check_status(self):
+        """Проверка статуса игрока"""
         if self.winner:
             cprint(f"Игрок {self.key + 1} победил!", 'cyan')
             self.game.status = False
@@ -41,12 +44,14 @@ class Participant:
             self.game.count_participants -= 1
 
     def act_computer(self, number):
+        """Действие компьютера"""
         if number in self.cart.number_on_cart:
             self.cart.cross_out(number)
             if len(self.cart.number_on_cart) == 0:
                 self.winner = True
 
     def act_man(self, number):
+        """Действие игрока"""
         if self.get_answer():
             answer = self.cart.cross_out(number)
             if answer:
@@ -59,6 +64,7 @@ class Participant:
                 self.lose_game()
 
     def lose_game(self):
+        """Проигрыш игрока"""
         self.can_play = False
         cprint('Вы проиграли', 'red')
         time.sleep(2)

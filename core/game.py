@@ -17,11 +17,13 @@ class Game:
         self.used_numbers = []
 
     def preparation_game(self):
+        """Формирование списка игроков"""
         for key in range(self.count_participants):
             participant = Participant(key, self.type_participant[key], self)
             self.participants[key] = participant
 
     def get_keg(self):
+        """Получение рандомного бочонка"""
         current_num = random.randint(1, 90)
         while current_num in self.used_numbers:
             current_num = random.randint(1, 90)
@@ -29,6 +31,7 @@ class Game:
         self.used_numbers.append(current_num)
 
     def run(self):
+        """Запуск игры"""
         self.preparation_game()
 
         while self.status:

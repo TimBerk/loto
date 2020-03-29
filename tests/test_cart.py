@@ -1,6 +1,6 @@
 import pytest
 from core.cart import Cart
-from tests.const import NUMBER_ON_CART, CART_NUMBERS
+from tests.const import CART_NUMBERS, NUMBER_ON_CART
 
 
 @pytest.fixture

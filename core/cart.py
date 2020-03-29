@@ -13,12 +13,14 @@ class Cart:
         self.generate_cart()
 
     def get_random_num(self):
+        """Получение рандомного числа для карточки игрока"""
         value = random.choice(self.numbers)
         while value in self.number_on_cart:
             value = random.choice(self.numbers)
         return value
 
     def generate_cart(self):
+        """Генерация игровой карточки"""
         for str_i in range(0, self.count_str):
             str_random = random.sample(range(1, 10), 5)
             numbers_str = {}
@@ -32,6 +34,7 @@ class Cart:
             self.cart_numbers[str_i] = numbers_str
 
     def print_cart(self):
+        """Печать игровой карточки"""
         cart = '------ Ваша карточка -----\n'
         for num_str, str_numbers in self.cart_numbers.items():
             str_print = ''
@@ -42,6 +45,7 @@ class Cart:
         print(cart)
 
     def print_str(self, value):
+        """Формирование поля"""
         if value == 0:
             str_print = f'   '
         elif value not in self.number_on_cart:
@@ -54,6 +58,7 @@ class Cart:
         return str_print
 
     def cross_out(self, number):
+        """Зачеркивание числа"""
         try:
             del self.number_on_cart[number]
             return True
@@ -64,6 +69,7 @@ class Cart:
 
     @staticmethod
     def format_number(number):
+        """Формирование зачеркнутого числа"""
         str_num = str(number)
         result = ['\u0336' + x for x in str_num]
         result = ''.join(result)
