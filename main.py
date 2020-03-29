@@ -1,5 +1,5 @@
 from termcolor import cprint
-from loto.core.game import Game, CORRECT_TYPES
+from core.game import Game, CORRECT_TYPES
 
 
 if __name__ == "__main__":

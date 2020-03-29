@@ -1,6 +1,6 @@
 import time
 from termcolor import cprint
-from loto.core.cart import Cart
+from core.cart import Cart
 
 
 class Participant:

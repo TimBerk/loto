@@ -1,6 +1,6 @@
 import random
 from termcolor import cprint
-from loto.core.participant import Participant
+from core.participant import Participant
 
 
 CORRECT_TYPES = [1, 2]
