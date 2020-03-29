@@ -10,11 +10,12 @@ if __name__ == "__main__":
         cprint('Укажите корректное количество игроков(от 2 до 5)', 'red')
         count = int(input("Введите количество игроков: "))
 
-    for _ in range(count):
-        new_type = input("Введите тип игрока: ").lower()
+    print("Типы игроков: user - 1 или computer - 2")
+    for num_player in range(count):
+        new_type = int(input(f"Введите тип игрока {num_player + 1}: "))
         while new_type not in CORRECT_TYPES:
-            cprint('Укажите корректный тип игрока(user или computer)', 'red')
-            new_type = input("Введите тип игрока: ").lower()
+            cprint('Укажите корректный тип игрока', 'red')
+            new_type = int(input("Введите тип игрока: "))
         types.append(new_type)
 
     game = Game(types)

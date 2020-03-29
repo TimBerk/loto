@@ -7,7 +7,7 @@ class Participant:
 
     def __init__(self, key, type_participant, game):
         self.key = key
-        self.type = type_participant
+        self.type = 'user' if type_participant == 1 else 'computer'
         self.game = game
         self.cart = Cart()
         self.can_play = True
@@ -15,12 +15,12 @@ class Participant:
 
     @staticmethod
     def get_answer():
-        answers = ['зачеркнуть', 'продолжить']
-        cross_out = input('Зачеркнуть число или продолжить: ').lower()
+        answers = [1, 2]
+        cross_out = int(input('Зачеркнуть число(1) или продолжить(2): '))
 
         while cross_out not in answers:
             print('Введите корректный ответ')
-            cross_out = input('Зачеркнуть число или продолжить: ').lower()
+            cross_out = int(input('Зачеркнуть число(1) или продолжить(2): '))
 
         return True if cross_out == answers[0] else False
 

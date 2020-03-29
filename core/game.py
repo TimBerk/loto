@@ -3,7 +3,7 @@ from termcolor import cprint
 from loto.core.participant import Participant
 
 
-CORRECT_TYPES = ['user', 'computer']
+CORRECT_TYPES = [1, 2]
 
 
 class Game:
