@@ -13,9 +13,12 @@ def local_cart():
 
 class TestCart:
 
-    def test_print_str(self):
-        cart = Cart()
-        assert cart.print_str(5) == " ̶5 "
+    def test_print_str(self, local_cart):
+        test_number = 73
+        if test_number not in local_cart.number_on_cart:
+            assert local_cart.print_str(73) == "̶7̶3 "
+        else:
+            assert local_cart.print_str(73) == "73 "
 
     def test_format_number(self):
         cart = Cart()
