@@ -2,14 +2,26 @@
 
 Правила игры можно найти на сайте [Wikipedia](https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D1%82%D0%BE).
 
+## Directory Structure
+
+```
+core/                core game code
+tests/               tests of the core game code
+```
+
 ## Installation and run
 
 ```console
 git clone https://github.com/TimBerk/loto
 cd loto
-pip install termcolor
+pip install -r requirements.txt
 python main.py
 ```
+
+## Docker
+1. Установите [docker](https://docs.docker.com/engine/installation/) в вашей ОС
+2. Для построения нового образа выполните команду ``docker build . -t loto``
+3. Для создания нового контейнера выполните команду ``docker container run -i --rm loto:latest``
 
 ## Usage
 

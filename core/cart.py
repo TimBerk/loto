@@ -47,7 +47,7 @@ class Cart:
     def print_str(self, value):
         """Формирование поля"""
         if value == 0:
-            str_print = f'   '
+            str_print = '   '
         elif value not in self.number_on_cart:
             cor_num = self.format_number(value)
             str_print = f'{cor_num} '

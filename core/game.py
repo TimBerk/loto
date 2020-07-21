@@ -41,7 +41,7 @@ class Game:
 
             for key, participant in self.participants.items():
                 if self.count_participants < 2:
-                    cprint(f"Игра завершена(не осталось игроков)", 'red')
+                    cprint("Игра завершена(не осталось игроков)", 'red')
                     self.status = False
                     break
 
